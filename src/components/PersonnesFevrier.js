@@ -1,0 +1,32 @@
+const personnesFevrier = [
+  { numero: 1, nom: "Làmsí nshù", jour: 'Wednesday' },
+  { numero: 2, nom: "Lə̌hmbhì", jour: 'Thursday' },
+  { numero: 3, nom: "Lǒnàm", jour: 'Friday' },
+  { numero: 4, nom: "Lǒsīē", jour: 'Saturday' },
+  { numero: 5, nom: "Lǒsīē nnák", jour: 'Sunday' },
+  { numero: 6, nom: "Mɑ̂fʉ̀", jour: 'Monday' },
+  { numero: 7, nom: 'Mɑ̂fʉ̀ Mbūànì', jour: 'Tuesday' },
+  { numero: 8, nom: "Mɑ̂fʉ̀ nkō'", jour: 'Wednesday' },
+  { numero: 9, nom: "Mɑ̄ngátnzhʉ̀'", jour: 'Thursday' },
+  { numero: 10, nom: "Mbè' Cwè'", jour: 'Friday' },
+  { numero: 11, nom: "Mbè' Nɑ̄h", jour: 'Saturday' },
+  { numero: 12, nom: "Mbè'zīī", jour: "Sunday" },
+  { numero: 13, nom: "Mbó Fʉ̀'", jour: "Monday" },
+  { numero: 14, nom: "Mbūànì", jour: "Tuesday" },
+  { numero: 15, nom: "Mbūànì Wèn", jour: "Wednesday" },
+  { numero: 16, nom: "Mênfʉ̀", jour: "Thursday" },
+  { numero: 17, nom: "Mênkām", jour: "Friday" },
+  { numero: 18, nom: "Mfɑ̀'ndīēkò", jour: "Saturday" },
+  { numero: 19, nom: "Nɑ́h nkwè'nì", jour: "Sunday" },
+  { numero: 20, nom: "Nɑ́h vɑ̀h", jour: "Monday" },
+  { numero: 21, nom: "Nàm", jour: "Tuesday" },
+  { numero: 22, nom: "Nàm à", jour: "Wednesday" },
+  { numero: 23, nom: "Ncǎ' miè", jour: "Thursday" },
+  { numero: 24, nom: "Ndéndēē", jour: "Friday" },
+  { numero: 25, nom: "Ndhʉ̌ŋwɑ̄'", jour: "Saturday" },
+  { numero: 26, nom: "Ndùāfʉ̀", jour: "Sunday" },
+  { numero: 27, nom: "Ndùānì", jour: "Monday" },
+  { numero: 28, nom: "Ndʉ̄ɑ̀'lɑ̄'", jour: "Tuesday" }
+];
+
+export default personnesFevrier;
