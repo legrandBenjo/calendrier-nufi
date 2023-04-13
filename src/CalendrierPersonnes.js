@@ -1,35 +1,34 @@
 import React, { Component } from "react";
-import { mois } from './components/Mois'
+import { mois } from './components/Mois';
 import './CalendrierPersonnes.css';
 
 class CalendrierPersonnes extends Component {
   constructor(props) {
     super(props);
-
-    const dateCourante = new Date();
-    const moisCourant = dateCourante.getMonth();
-    
+    const dateActuelle = new Date();
+    const moisActuel = dateActuelle.getMonth();
     this.state = {
-      moisActuel: moisCourant,
+      moisActuel,
+      jourActuel: dateActuelle.getDate()
     };
   }
 
   moisPrecedent = () => {
     this.setState((prevState) => ({
-      moisActuel: (prevState.moisActuel - 1 + mois.length) % mois.length,
+      moisActuel: (prevState.moisActuel - 1 + mois.length) % mois.length
     }));
   };
 
   moisSuivant = () => {
     this.setState((prevState) => ({
-      moisActuel: (prevState.moisActuel + 1) % mois.length,
+      moisActuel: (prevState.moisActuel + 1) % mois.length
     }));
   };
 
   render() {
-    const { moisActuel } = this.state;
+    const { moisActuel, jourActuel } = this.state;
     const personnesMois = mois[moisActuel].personnes;
-
+   
     return (
       <div>
         <div className="bg-light-grey dib br3 pa3 ma3 bw2 showdow-5">
@@ -39,11 +38,11 @@ class CalendrierPersonnes extends Component {
               {[0, 1, 2, 3].map((i) => (
                 <tr key={i}>
                   {personnesMois.slice(i * 8, (i + 1) * 8).map((personne, j) => (
-                    <td key={j}>
-                      <div className="enteTableau">{personne.nufiJour}</div><br/>
-                      <div className="f4 dark-red">{personne.jour}</div> <br />
-                      <div className="b">{personne.numero}</div> <br />
-                      <div className="">{personne.nom}</div>
+                    <td key={j} className={personne.numero === jourActuel ? 'aujourdhui' : ''}>
+                      <div className="enteTableau">{personne.nufiJour}</div><br />
+                      <div className="f5 dark-red ">{personne.jour}</div> <br />
+                      <div className="">{personne.numero}</div> <br />
+                      <div className="f5 b">{personne.nom}</div>
                     </td>
                   ))}
                 </tr>
