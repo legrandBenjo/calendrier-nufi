@@ -32,22 +32,25 @@ class CalendrierPersonnes extends Component {
 
   render() {
     const { jourActuel } = this.state;
-
-    const personnesMois = mois[this.state.moisActuel].personnes;
     const recherche = this.state.recherche.toLowerCase().trim();
 
-    const personnesFiltrees = personnesMois.filter((personne) => {
-      const nomPersonne = personne.nom.toLowerCase();
-      const jourPersonne = personne.jour.toString();
-      const nufiJourPersonne = personne.nufiJour.toLowerCase();
-      const numeroPersonne = personne.numero.toString();
-      return (
-        nomPersonne.includes(recherche) ||
-        jourPersonne.includes(recherche) ||
-        nufiJourPersonne.includes(recherche) ||
-        numeroPersonne.includes(recherche)
-      );
-    });
+    const personnesFiltrees = mois.reduce((acc, m) => {
+      const personnesMois = m.personnes;
+      const personnes = personnesMois.filter((personne) => {
+        const nomPersonne = personne.nom.toLowerCase();
+        const jourPersonne = personne.jour.toString();
+        const nufiJourPersonne = personne.nufiJour.toLowerCase();
+        const numeroPersonne = personne.numero.toString();
+        return (
+          nomPersonne.includes(recherche) ||
+          jourPersonne.includes(recherche) ||
+          nufiJourPersonne.includes(recherche) ||
+          numeroPersonne.includes(recherche)
+        );
+      });
+      return [...acc, ...personnes];
+    }, []);
+    
 
   return (
       <div>
