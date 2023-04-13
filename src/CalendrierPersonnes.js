@@ -1,48 +1,74 @@
 import React, { Component } from "react";
-import { mois } from './components/Mois';
+import { mois } from './components/Mois'
 import './CalendrierPersonnes.css';
 
 class CalendrierPersonnes extends Component {
   constructor(props) {
     super(props);
+    const moisEnCours = new Date().getMonth();
     const dateActuelle = new Date();
-    const moisActuel = dateActuelle.getMonth();
     this.state = {
-      moisActuel,
-      jourActuel: dateActuelle.getDate()
+      moisActuel: moisEnCours,
+      jourActuel: dateActuelle.getDate(),
+      recherche: '',
     };
   }
 
   moisPrecedent = () => {
     this.setState((prevState) => ({
-      moisActuel: (prevState.moisActuel - 1 + mois.length) % mois.length
+      moisActuel: (prevState.moisActuel - 1 + mois.length) % mois.length,
     }));
   };
 
   moisSuivant = () => {
     this.setState((prevState) => ({
-      moisActuel: (prevState.moisActuel + 1) % mois.length
+      moisActuel: (prevState.moisActuel + 1) % mois.length,
     }));
   };
 
+  handleRechercheChange = (event) => {
+    this.setState({ recherche: event.target.value });
+  }
+
   render() {
-    const { moisActuel, jourActuel } = this.state;
-    const personnesMois = mois[moisActuel].personnes;
-   
-    return (
+    const { jourActuel } = this.state;
+
+    const personnesMois = mois[this.state.moisActuel].personnes;
+    const recherche = this.state.recherche.toLowerCase().trim();
+
+    const personnesFiltrees = personnesMois.filter((personne) => {
+      const nomPersonne = personne.nom.toLowerCase();
+      const jourPersonne = personne.jour.toString();
+      const nufiJourPersonne = personne.nufiJour.toLowerCase();
+      const numeroPersonne = personne.numero.toString();
+      return (
+        nomPersonne.includes(recherche) ||
+        jourPersonne.includes(recherche) ||
+        nufiJourPersonne.includes(recherche) ||
+        numeroPersonne.includes(recherche)
+      );
+    });
+
+  return (
       <div>
         <div className="bg-light-grey dib br3 pa3 ma3 bw2 showdow-5">
-          <h2>{mois[moisActuel].nom}</h2>
+          <h2>{mois[this.state.moisActuel].nom}</h2>
+          <input
+            type="text"
+            placeholder="Rechercher..."
+            value={this.state.recherche}
+            onChange={this.handleRechercheChange}
+          />
           <table>
             <tbody>
               {[0, 1, 2, 3].map((i) => (
                 <tr key={i}>
-                  {personnesMois.slice(i * 8, (i + 1) * 8).map((personne, j) => (
+                  {personnesFiltrees.slice(i * 8, (i + 1) * 8).map((personne, j) => (
                     <td key={j} className={personne.numero === jourActuel ? 'aujourdhui' : ''}>
                       <div className="enteTableau">{personne.nufiJour}</div><br />
-                      <div className="f5 dark-red ">{personne.jour}</div> <br />
-                      <div className="">{personne.numero}</div> <br />
-                      <div className="f5 b">{personne.nom}</div>
+                      <div className="f4 dark-red">{personne.jour}</div> <br />
+                      <div className="b">{personne.numero}</div> <br />
+                      <div className="">{personne.nom}</div>
                     </td>
                   ))}
                 </tr>
