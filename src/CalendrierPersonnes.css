@@ -42,6 +42,7 @@ tbody td:hover {
   padding: 5px;
 }
 
+/* Style pour aujourdhui*/
 .aujourdhui {
   background-color: #FFD700;
 }
@@ -53,4 +54,15 @@ tbody td:hover {
 
 .b.aujourdhui {
   color: #d10a3c;
+}
+
+/* Style pour la recherche*/
+.search-bar {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px;
+  width: 25%;
+  margin-bottom: 16px;
 }

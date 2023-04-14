@@ -3,7 +3,6 @@ import { mois } from './components/Mois'
 import './CalendrierPersonnes.css';
 
 class CalendrierPersonnes extends Component {
-
   // dans mon constructeur, je passe les états que je vais utiliser plus bas
   constructor(props) {
     super(props);
@@ -30,7 +29,6 @@ class CalendrierPersonnes extends Component {
     }));
   };
 
-  // sera utilisé pour récupérer la recherche de l'utilisateur dans la barre de recherche
   handleRechercheChange = (event) => {
     this.setState({ recherche: event.target.value });
   }
@@ -38,38 +36,33 @@ class CalendrierPersonnes extends Component {
   render() {
     const { jourActuel } = this.state;
 
-    // Option de recherche dans le calendrier
+    /* On va rechercher dans toute l'année:
+     - les personnes: Benjamin
+     - le jour (numero): exemple: 12
+   */
+    const personnesMois = mois[this.state.moisActuel].personnes;
     const recherche = this.state.recherche.toLowerCase().trim();
 
-    /* On va rechercher dans toute l'année:
-      - les personnes: Benjamin
-      - le jour (numero): exemple: 12
-    */
-    const personnesFiltrees = mois.reduce((acc, m) => {
-      const personnesMois = m.personnes;
-      const personnes = personnesMois.filter((personne) => {
-        const nomPersonne = personne.nom.toLowerCase();
-        const jourPersonne = personne.jour.toString();
-        const nufiJourPersonne = personne.nufiJour.toLowerCase();
-        const numeroPersonne = personne.numero.toString();
-        return (
-          nomPersonne.includes(recherche) ||
-          jourPersonne.includes(recherche) ||
-          nufiJourPersonne.includes(recherche) ||
-          numeroPersonne.includes(recherche)
-        );
-      });
-      return [...acc, ...personnes];
-    }, []);
-    
+    const personnesFiltrees = personnesMois.filter((personne) => {
+      const nomPersonne = personne.nom.toLowerCase();
+      const jourPersonne = personne.jour.toString();
+      const nufiJourPersonne = personne.nufiJour.toLowerCase();
+      const numeroPersonne = personne.numero.toString();
+      return (
+        nomPersonne.includes(recherche) ||
+        jourPersonne.includes(recherche) ||
+        nufiJourPersonne.includes(recherche) ||
+        numeroPersonne.includes(recherche)
+      );
+    });
 
-  return (
+    return (
       <div>
         <div className="bg-light-grey dib br3 pa3 ma3 bw2 showdow-5">
           <h2>{mois[this.state.moisActuel].nom}</h2>
-          <input
+          <input className="search-bar"
             type="text"
-            placeholder="Rechercher..."
+            placeholder="Rechercher dans ce mois..."
             value={this.state.recherche}
             onChange={this.handleRechercheChange}
           />
@@ -80,7 +73,6 @@ class CalendrierPersonnes extends Component {
                   {personnesFiltrees.slice(i * 8, (i + 1) * 8).map((personne, j) => (
                     //ici j'ajoute le style 'aujiurdhui' à la date du jour pour la mettre en évidence (en jaune)
                     <td key={j} className={personne.numero === jourActuel ? 'aujourdhui' : ''}>
-                      {/* j'affiche le reste des éléments du tableau  */}
                       <div className="enteTableau">{personne.nufiJour}</div><br />
                       <div className="f4 dark-red">{personne.jour}</div> <br />
                       <div className="b">{personne.numero}</div> <br />
