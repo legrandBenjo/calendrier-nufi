@@ -11,6 +11,9 @@ import PersonnesOctobre from "./PersonnesOctobre";
 import PersonnesNovembre from "./PersonnesNovembre";
 import PersonnesDecembre from "./PersonnesDecembre";
 
+/* Pour le moment je crée le composant Mois.js mois en statique
+* Ce composant pourra être amélioré
+*/
 export const mois = [
   { nom: "Ngù'fī / Janvier", personnes: PersonnesJanvier },
   { nom: "Nkùɑ̀nʉ̀ɑ̀ / Février", personnes: PersonnesFevrier },

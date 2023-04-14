@@ -1,3 +1,7 @@
+/* Pour le moment je mets les Personnes associés au mois en statique
+* Ce composant pourra être amélioré pour lier le jour au nufiJour et 
+* être appelé dans le composant Mois.js
+*/
 const personnesJanvier = [
   { numero: 1, nom: "Ngǎ'kò", jour: "Sunday" , nufiJour: "Líé'nkwè’"},
   { numero: 2, nom: "Ncǎ'cwaa", jour: "Monday" , nufiJour: "NKɑ́ɑ́tēē"},
