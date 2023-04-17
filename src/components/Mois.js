@@ -19,12 +19,12 @@ export const mois = [
   { nom: "Nkùɑ̀nʉ̀ɑ̀ / Février", personnes: PersonnesFevrier },
   { nom: "Mbàkngòfāt / Mars", personnes: PersonnesMars },
   { nom: "Sò'njɑ̀ɑ̀ / Avril", personnes: PersonnesAvril },
-  { nom: "Njwēnɑ̌hntà / Mai", personnes: PersonnesMai },
+  { nom: "Njwēnɑ̌hntà' / Mai", personnes: PersonnesMai },
   { nom: "Mòmòshʉ̄ / Juin", personnes: PersonnesJuin },
   { nom: "Ntūmbhìngòfāt / Juillet", personnes: PersonnesJuillet },
   { nom: "Mɑ̄ngà'nshì / Août", personnes: PersonnesAout },
-  { nom: "Kùkū / Septembre", personnes: PersonnesSeptembre },
+  { nom: "Kùkū' / Septembre", personnes: PersonnesSeptembre },
   { nom: "Ndǔ'nzɑ̄ / Octobre", personnes: PersonnesOctobre },
-  { nom: "Nkhùɑnʉ̀ɑ̀ / Novembre", personnes: PersonnesNovembre },
+  { nom: "Nkhʉ̀ɑ̀nʉ̀ɑ̀ / Novembre", personnes: PersonnesNovembre },
   { nom: "Ncátmɑ̄ŋū / Décembre", personnes: PersonnesDecembre }
 ];

@@ -7,7 +7,7 @@ class RecherchePersonnes extends Component {
     return (
       <input className="search-bar"
         type="text"
-        placeholder="Rechercher dans ce mois..."
+        placeholder="Cāk séè lè ..."
         value={recherche}
         onChange={handleRechercheChange}
       />
