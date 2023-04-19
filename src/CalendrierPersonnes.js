@@ -8,12 +8,11 @@ class CalendrierPersonnes extends Component {
     super(props);
     const moisEnCours = new Date().getMonth();
     const dateActuelle = new Date();
-    const personnesMois = mois.map(m => m.personnes).flat();
     this.state = {
       moisActuel: moisEnCours, // ce state permet de se positionner sur le mois actuel 
       jourActuel: dateActuelle.getDate(), // celui-ci permet de savoir le jour (exemple: 14)
       recherche: '', // celui-ci est utilisé pour la recherche
-      personnesFiltrees: personnesMois, // Ajouter le state pour les personnes filtrées
+      personnesFiltrees: mois[moisEnCours].personnes, // Ajouter le state pour les personnes filtrées
     };
   }
 
@@ -31,25 +30,27 @@ class CalendrierPersonnes extends Component {
     }));
   };
 
-  /** Utilisé uniquement pour filtrer les résultats de la rechercehe */
-  handleRechercheChange = (event) => {
-    const personnesMois = mois.map(m => m.personnes).flat();
-    const recherche = event.target.value.toLowerCase().trim();
-    const personnesFiltrees = personnesMois.filter((personne) => {
+  filtrePersonnes(personnesMois, recherche) {
+    return personnesMois.filter((personne) => {
       const nomPersonne = personne.nom.toLowerCase();
       const jourPersonne = personne.jour.toString();
-      const nufiJourPersonne = personne.nufiJour.toLowerCase();
       const numeroPersonne = personne.numero.toString();
       return (
         nomPersonne.includes(recherche) ||
         jourPersonne.includes(recherche) ||
-        nufiJourPersonne.includes(recherche) ||
         numeroPersonne.includes(recherche)
       );
     });
+  }
+
+  /** Utilisé uniquement pour filtrer les résultats de la rechercehe */
+  handleRechercheChange = (event) => {
+    const personnesMois = mois.map(m => m.personnes).flat();
+    const recherche = event.target.value.toLowerCase().trim();
+    const personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
     this.setState({ recherche, personnesFiltrees });
-    console.log('ici dans handleRechercheChange', personnesFiltrees  );
   };
+
   
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
@@ -74,29 +75,16 @@ class CalendrierPersonnes extends Component {
   };
 
 
-    /** Utilisé lorsque j'appuie sur les touches Précédent/Suivant */
+  /** Utilisé lorsque j'appuie sur les touches Précédent/Suivant */
   componentDidUpdate(prevProps, prevState) {
     if (prevState.moisActuel !== this.state.moisActuel) {
-      //const personnesMois = mois.map(m => m.personnes).flat();
       const personnesMois = mois[this.state.moisActuel].personnes;
       const recherche = this.state.recherche.toLowerCase().trim();
-      const personnesFiltrees = personnesMois.filter((personne) => {
-        const nomPersonne = personne.nom.toLowerCase();
-        const jourPersonne = personne.jour.toString();
-        const nufiJourPersonne = personne.nufiJour.toLowerCase();
-        const numeroPersonne = personne.numero.toString();
-        return (
-          nomPersonne.includes(recherche) ||
-          jourPersonne.includes(recherche) ||
-          nufiJourPersonne.includes(recherche) ||
-          numeroPersonne.includes(recherche)
-        );
-      });
+      const personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
       this.setState({ personnesFiltrees });
-      console.log('dans componentDidUpdate: ',personnesFiltrees);
     }
   }
-  
+
 
   render() {
     const { jourActuel, personnesFiltrees, recherche } = this.state;
@@ -112,7 +100,10 @@ class CalendrierPersonnes extends Component {
                 <tr key={i}>
                   {personnesFiltrees.slice(i * 8, (i + 1) * 8).map((personne, j) => (
                     <td key={j} className={personne.numero === jourActuel ? "aujourdhui" : ""}>
-                      <div className="enteTableau">{personne.nufiJour}</div>
+                      <div className="enteTableau">
+                        {personne.nufiJour}<br/>
+                        <div className="b black">{personne.month}</div>
+                      </div>
                       <br />
                       <div className="f4 dark-red">{personne.jour}</div>
                       <br />
