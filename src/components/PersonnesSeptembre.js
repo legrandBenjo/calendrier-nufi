@@ -12,7 +12,7 @@ const PersonnesSeptembre = [
   { numero: 11, nom: "Cátmɑ̄nì", jour: "Monday", nufiJour: "Nzîsō" , month: "Kùkū"},
   { numero: 12, nom: "Ca᷅mnà'", jour: "Tuesday", nufiJour: "Nsū'kwɑ̀" , month: "Kùkū"},
   { numero: 13, nom: "Cɑ́'wūɑ̄", jour: "Wednesday", nufiJour: "Nthʉ̄'ntāā" , month: "Kùkū"},
-  { numero: 14, nom: "Cwè' lɑ̀' hwīē", jour: "Thursday", nufiJour: "Líé'nkwè’" , month: "Kùkū"},
+  { numero: 14, nom: "Cwè'lɑ̀'hwīē", jour: "Thursday", nufiJour: "Líé'nkwè’" , month: "Kùkū"},
   { numero: 15, nom: "Tūpòwèn", jour: "Friday", nufiJour: "NKɑ́ɑ́tēē" , month: "Kùkū"},
   { numero: 16, nom: "Ntéépīē", jour: "Saturday", nufiJour: "Nzêngòò" , month: "Kùkū"},
   { numero: 17, nom: "Ntē' lɑ̀' lēē", jour: "Sunday", nufiJour: "Ncômntēē" , month: "Kùkū"},

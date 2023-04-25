@@ -34,10 +34,12 @@ class CalendrierPersonnes extends Component {
     return personnesMois.filter((personne) => {
       const nomPersonne = personne.nom.toLowerCase();
       const jourPersonne = personne.jour.toString();
+      const nufiJourPersonne = personne.nufiJour.toLowerCase();
       const numeroPersonne = personne.numero.toString();
       return (
         nomPersonne.includes(recherche) ||
         jourPersonne.includes(recherche) ||
+        nufiJourPersonne.includes(recherche) ||
         numeroPersonne.includes(recherche)
       );
     });
@@ -48,10 +50,11 @@ class CalendrierPersonnes extends Component {
     const personnesMois = mois.map(m => m.personnes).flat();
     const recherche = event.target.value.toLowerCase().trim();
     const personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
+    console.log(personnesFiltrees);
     this.setState({ recherche, personnesFiltrees });
   };
 
-  
+
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
   }
@@ -81,14 +84,13 @@ class CalendrierPersonnes extends Component {
       const personnesMois = mois[this.state.moisActuel].personnes;
       const recherche = this.state.recherche.toLowerCase().trim();
       const personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
-      this.setState({ personnesFiltrees });
+      this.setState({ recherche, personnesFiltrees });
     }
   }
 
 
   render() {
     const { jourActuel, personnesFiltrees, recherche } = this.state;
-
     return (
       <div>
         <div className="bg-light-grey dib br3 pa3 ma3 bw2 showdow-5">
@@ -99,17 +101,20 @@ class CalendrierPersonnes extends Component {
               {[0, 1, 2, 3].map((i) => (
                 <tr key={i}>
                   {personnesFiltrees.slice(i * 8, (i + 1) * 8).map((personne, j) => (
-                    <td key={j} className={personne.numero === jourActuel ? "aujourdhui" : ""}>
+                    <td key={j}
+                      className={ (personne.numero === jourActuel) && (mois[this.state.moisActuel].nom.includes(personne.month)) ?
+                        "aujourdhui" :
+                        ""}>
                       <div className="enteTableau">
-                        {personne.nufiJour}<br/>
-                        <div className="b black">{personne.month}</div>
+                        {personne.nufiJour}<br />
+                        <div className="black">{personne.month}</div>
                       </div>
                       <br />
                       <div className="f4 dark-red">{personne.jour}</div>
                       <br />
-                      <div className="b">{personne.numero}</div>
+                      <div className="">{personne.numero}</div>
                       <br />
-                      <div className="">{personne.nom}</div>
+                      <div className="b">{personne.nom}</div>
                     </td>
                   ))}
                 </tr>

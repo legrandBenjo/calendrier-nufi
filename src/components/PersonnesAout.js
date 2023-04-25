@@ -1,11 +1,11 @@
 const PersonnesAout = [
-  { numero: 1, nom: "Ngɑ̌pénsīē", jour: "Tuesday", nufiJour: "Nzîngū" , month: "Mɑ̄ngà'nshì"},
+  { numero: 1, nom: "Nkɑ̀'zhī", jour: "Tuesday", nufiJour: "Nzîngū" , month: "Mɑ̄ngà'nshì"},
   { numero: 2, nom: "Ngòfât", jour: "Wednesday", nufiJour: "Nzîsō" , month: "Mɑ̄ngà'nshì"},
   { numero: 3, nom: "Ngòfât nkèè", jour: "Thursday", nufiJour: "Nsū'kwɑ̀" , month: "Mɑ̄ngà'nshì"},
   { numero: 4, nom: "ɑ́ ngù'bɑ̄ yò", jour: "Friday", nufiJour: "Nthʉ̄'ntāā" , month: "Mɑ̄ngà'nshì"},
   { numero: 5, nom: "Ngǔ'ngʉ̄ɑ̄'", jour: "Saturday", nufiJour: "Líé'nkwè’" , month: "Mɑ̄ngà'nshì"},
   { numero: 6, nom: "Ngǔ'nù", jour: "Sunday", nufiJour: "NKɑ́ɑ́tēē", month: "Mɑ̄ngà'nshì" },
-  { numero: 7, nom: "Ngʉ̄ɑ̄' lɑ̀' míé", jour: "Monday", nufiJour: "Nzêngòò", month: "Mɑ̄ngà'nshì" },
+  { numero: 7, nom: "Ngʉ̄ɑ̄'lɑ̀'míé", jour: "Monday", nufiJour: "Nzêngòò", month: "Mɑ̄ngà'nshì" },
   { numero: 8, nom: "Nì", jour: "Tuesday", nufiJour: "Ncômntēē" , month: "Mɑ̄ngà'nshì"},
   { numero: 9, nom: "Njūmɑ̄nì", jour: "Wednesday", nufiJour: "Nzîngū" , month: "Mɑ̄ngà'nshì"},
   { numero: 10, nom: "Ngǎ'mɑ̄nì", jour: "Thursday", nufiJour: "Nzîsō", month: "Mɑ̄ngà'nshì" },
