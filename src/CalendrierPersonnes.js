@@ -47,10 +47,12 @@ class CalendrierPersonnes extends Component {
 
   /** Utilisé uniquement pour filtrer les résultats de la rechercehe */
   handleRechercheChange = (event) => {
-    const personnesMois = mois.map(m => m.personnes).flat();
+    var personnesMois = mois.map(m => m.personnes).flat();
     const recherche = event.target.value.toLowerCase().trim();
-    const personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
-    console.log(personnesFiltrees);
+    if (recherche === '') {
+      personnesMois = mois[this.state.moisActuel].personnes;
+    }
+    var personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
     this.setState({ recherche, personnesFiltrees });
   };
 
@@ -89,24 +91,26 @@ class CalendrierPersonnes extends Component {
   }
 
 
+
   render() {
     const { jourActuel, personnesFiltrees, recherche } = this.state;
+    const currentMonth = this.state.moisActuel;
     return (
       <div>
         <div className="bg-light-grey dib br3 pa3 ma3 bw2 showdow-5">
-          <h2>{mois[this.state.moisActuel].nom}</h2>
-          <RecherchePersonnes recherche={recherche} handleRechercheChange={this.handleRechercheChange} />
+          <h2>{mois[currentMonth].nom}</h2>
+          <RecherchePersonnes
+            recherche={recherche}
+            handleRechercheChange={this.handleRechercheChange}
+          />
           <table>
             <tbody>
               {[0, 1, 2, 3].map((i) => (
                 <tr key={i}>
                   {personnesFiltrees.slice(i * 8, (i + 1) * 8).map((personne, j) => (
                     <td key={j}
-                      className={ (personne.numero === jourActuel) && (mois[this.state.moisActuel].nom.includes(personne.month)) ?
-                        "aujourdhui" :
-                        ""}>
-                      <div className="enteTableau">
-                        {personne.nufiJour}<br />
+                      className={personne.numero === jourActuel ? "aujourdhui" : ""}>
+                      <div className="enteTableau">{personne.nufiJour}<br />
                         <div className="black">{personne.month}</div>
                       </div>
                       <br />
