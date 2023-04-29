@@ -21,6 +21,7 @@ Remarques:
     - Ca᷅mnà' (31/03 et 12/09)
 - Kùkū ca devrεt etre avec le cout de glottes Kùkū'
 - Ndǔ'nzɑ̄ ca drevrεt etre Ndʉ̌'nzɑ̄
+- on prononce ceci: Nùctī comment?
 
 # Getting Started with Create React App
 
