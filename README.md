@@ -4,7 +4,6 @@ Légende:
 - 0 = tâche en cours ou non exécutée
 - 1 = tâche exécutée
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 |N°|Tâche|responsable|Status|
 |---|---|---|---|
 |1|Compléter la liste des noms avec des noms de famille usuels|djomo-moungoue|1|
@@ -24,6 +23,8 @@ Remarques:
 - Ndǔ'nzɑ̄ ca drevrεt etre Ndʉ̌'nzɑ̄
 
 # Getting Started with Create React App
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
