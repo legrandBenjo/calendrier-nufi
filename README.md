@@ -7,7 +7,7 @@ Légende:
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 |N°|Tâche|responsable|Status|
 |---|---|---|---|
-|1|Compléter la liste des noms avec des noms de famille usuels|djomo-moungoue|0|
+|1|Compléter la liste des noms avec des noms de famille usuels|djomo-moungoue|1|
 |2|Kùkū renommer par Kùkū'|djomo-moungoue|1|
 |2|Ndǔ'nzɑ̄ renommer par Ndʉ̌'nzɑ̄|djomo-moungoue|1|
 
