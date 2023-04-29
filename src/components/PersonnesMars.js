@@ -11,7 +11,7 @@ const personnesMars = [
   { numero: 10, nom: "Nkɑ̀'", jour: "Friday", nufiJour: "Nzîngū" , month: "Mbàkngòfāt"},
   { numero: 11, nom: "Ca᷅mngwê", jour: "Saturday", nufiJour: "Nzîsō" , month: "Mbàkngòfāt"},
   { numero: 12, nom: "Ca᷅gū", jour: "Sunday", nufiJour: "Nsū'kwɑ̀" , month: "Mbàkngòfāt"},
-  { numero: 13, nom: "Kɑ̀lɑ̄'mbāk", jour: "Monday", nufiJour: "Nthʉ̄'ntāā" , month: "Mbàkngòfāt"},
+  { numero: 13, nom: "Pǎ'kò", jour: "Monday", nufiJour: "Nthʉ̄'ntāā" , month: "Mbàkngòfāt"},
   { numero: 14, nom: "Kèēwū", jour: "Tuesday", nufiJour: "Líé'nkwè’" , month: "Mbàkngòfāt"},
   { numero: 15, nom: "Kémā", jour: "Wednesday", nufiJour: "NKɑ́ɑ́tēē" , month: "Mbàkngòfāt"},
   { numero: 16, nom: "Nkômnā", jour: "Thursday", nufiJour: "Nzêngòò" , month: "Mbàkngòfāt"},

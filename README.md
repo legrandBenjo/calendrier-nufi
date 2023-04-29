@@ -1,10 +1,29 @@
-# Getting Started with Create React App
+# Exécution du projet
+
+Légende:
+- 0 = tâche en cours ou non exécutée
+- 1 = tâche exécutée
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-|N°|Tâche|Status|responsable|
+|N°|Tâche|responsable|Status|
 |---|---|---|---|
-|1|Compléter la liste des noms avec des noms de famille usuel|djomo-moungoue|
+|1|Compléter la liste des noms avec des noms de famille usuels|djomo-moungoue|0|
+|2|Kùkū renommer par Kùkū'|djomo-moungoue|1|
+|2|Ndǔ'nzɑ̄ renommer par Ndʉ̌'nzɑ̄|djomo-moungoue|1|
 
+Remarques:
+- pourquoi Ngǎmeni et non Ngǎmɑ̄ni comme dans Njōmɑ̄lʉ̄ɑ̄' (12/04). Pareil Cāmēnī, 
+- Cāmgúé ce n'est pas plutôt Cāmgwê ? (29/04)
+- Doublons:
+    - Cīēncə̄ə̄ 3 fois (5/01 et 7/05, 13)
+    - Njə̀ə̄mōō (28/01 et 14/06)
+    - Mɑ̂ntû'kām (11 et 12/07)
+    - Sīèwèn (18/02 et 4/09)
+    - Ca᷅mnà' (31/03 et 12/09)
+- Kùkū ca devrεt etre avec le cout de glottes Kùkū'
+- Ndǔ'nzɑ̄ ca drevrεt etre Ndʉ̌'nzɑ̄
+
+# Getting Started with Create React App
 
 ## Available Scripts
 
@@ -72,3 +91,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+----
+
+# Dépannage d'erreurs
+
+## Problème
+~~~js
+$ npm start
+
+> calendrier-nufi@0.1.0 start
+> react-scripts start
+
+'react-scripts' is not recognized as an internal or external command,
+operable program or batch file.
+~~~
+
+## Solution
+"It is an error about react-scripts file missing in your node modules directory at the time of installation. Now, you can add manually this via the command:"
+~~~js
+$ npm install react-scripts
+~~~

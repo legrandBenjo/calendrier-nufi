@@ -22,7 +22,7 @@ const PersonnesJuin = [
   { numero: 21, nom: "Fìágàm", jour: "Wednesday", nufiJour: "Ncômntēē" , month: "Mòmòshʉ̄"},
   { numero: 22, nom: "Sépdə̄", jour: "Thursday", nufiJour: "Nzîngū" , month: "Mòmòshʉ̄"},
   { numero: 23, nom: "Nkǎkmɑ̄nì", jour: "Friday", nufiJour: "Nzîsō" , month: "Mòmòshʉ̄"},
-  { numero: 24, nom: "Nkɑ̀'ncò", jour: "Saturday", nufiJour: "Nsū'kwɑ̀" , month: "Mòmòshʉ̄"},
+  { numero: 24, nom: "Njūmɑ̄nì", jour: "Saturday", nufiJour: "Nsū'kwɑ̀" , month: "Mòmòshʉ̄"},
   { numero: 25, nom: "Énkòóé", jour: "Sunday", nufiJour: "Nthʉ̄'ntāā" , month: "Mòmòshʉ̄"},
   { numero: 26, nom: "Kèēwū", jour: "Monday", nufiJour: "Líé'nkwè’" , month: "Mòmòshʉ̄"},
   { numero: 27, nom: "Kwèlě'kò", jour: "Tuesday", nufiJour: "NKɑ́ɑ́tēē" , month: "Mòmòshʉ̄"},
