@@ -1,6 +1,10 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+|N°|Tâche|Status|responsable|
+|---|---|---|---|
+|1|Compléter la liste des noms avec des noms de famille usuel|djomo-moungoue|
+
 
 ## Available Scripts
 
