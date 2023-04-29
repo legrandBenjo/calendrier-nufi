@@ -12,7 +12,7 @@ const PersonnesJuillet = [
   { numero: 11, nom: "Mɑ̂ntû'kām", jour: "Tuesday", nufiJour: "Nthʉ̄'ntāā" , month: "Ntūmbhìngòfāt"},
   { numero: 12, nom: "Mɑ̂ntû'kām ", jour: "Wednesday", nufiJour: "Líé'nkwè’" , month: "Ntūmbhìngòfāt"},
   { numero: 13, nom: "Mênkām", jour: "Thursday", nufiJour: "NKɑ́ɑ́tēē" , month: "Ntūmbhìngòfāt"},
-  { numero: 14, nom: "Nsǐnkāp", jour: "Friday", nufiJour: "Nzêngòò" , month: "Ntūmbhìngòfāt"},
+  { numero: 14, nom: "Nsǐnkām", jour: "Friday", nufiJour: "Nzêngòò" , month: "Ntūmbhìngòfāt"},
   { numero: 15, nom: "Wókthà", jour: "Saturday", nufiJour: "Ncômntēē" , month: "Ntūmbhìngòfāt"},
   { numero: 16, nom: "Mīàfò", jour: "Sunday", nufiJour: "Nzîngū" , month: "Ntūmbhìngòfāt"},
   { numero: 17, nom: "Mìè mɑ̄ nnák", jour: "Monday", nufiJour: "Nzîsō" , month: "Ntūmbhìngòfāt"},
