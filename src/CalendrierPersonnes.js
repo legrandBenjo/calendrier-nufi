@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Swipe from 'react-swipe';
 import { mois } from './components/Mois'
 import RecherchePersonnes from './components/RecherchePersonnes'
 import './CalendrierPersonnes.css';
@@ -15,7 +14,6 @@ class CalendrierPersonnes extends Component {
       recherche: '', // celui-ci est utilisé pour la recherche
       personnesFiltrees: mois[moisEnCours].personnes, // Ajouter le state pour les personnes filtrées
     };
-    this.swipeRef = React.createRef();
   }
 
   //moisPrecedent va utiliser le state moisActuel pour afficher le mois précédent dans le bouton " mois précédent"
@@ -31,15 +29,6 @@ class CalendrierPersonnes extends Component {
       moisActuel: (prevState.moisActuel + 1) % mois.length,
     }));
   };
-
-
-  handleSwipeLeft = () => {
-    this.moisPrecedent();
-  }
-
-  handleSwipeRight = () => {
-   this.moisSuivant();
-  }
 
   filtrePersonnes(personnesMois, recherche) {
     return personnesMois.filter((personne) => {
@@ -101,13 +90,10 @@ class CalendrierPersonnes extends Component {
     }
   }
 
-
-
   render() {
     const { jourActuel, personnesFiltrees, recherche } = this.state;
     const currentMonth = this.state.moisActuel;
     return (
-      <Swipe onSwipeLeft={this.handleSwipeLeft} onSwipeRight={this.handleSwipeRight} ref={this.swipeRef}>
       <div>
         <div className="bg-light-grey dib br3 pa3 ma3 bw2 showdow-5">
           <h2>{mois[currentMonth].nom}</h2>
@@ -143,7 +129,6 @@ class CalendrierPersonnes extends Component {
           </div>
         </div>
       </div>
-      </Swipe>
     );
   }
 }
