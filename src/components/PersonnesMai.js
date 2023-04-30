@@ -2,7 +2,7 @@ const PersonnesMai = [
   { numero: 1, nom: "Kēmngūm", jour: "Monday", nufiJour: "Líé'nkwè’" , month: "Njwēnɑ̌hntà"},
   { numero: 2, nom: "Shwínā", jour: "Tuesday", nufiJour: "NKɑ́ɑ́tēē" , month: "Njwēnɑ̌hntà"},
   { numero: 3, nom: "Nǔmbísīē", jour: "Wednesday", nufiJour: "Nzêngòò", month: "Njwēnɑ̌hntà" },
-  { numero: 4, nom: "Pàjīī", jour: "Thursday", nufiJour: "Ncômntēē" , month: "Njwēnɑ̌hntà"},
+  { numero: 4, nom: "Wùɔ̄'cə̄ə̄", jour: "Thursday", nufiJour: "Ncômntēē" , month: "Njwēnɑ̌hntà"},
   { numero: 5, nom: "Sìpīēndɑ̀h", jour: "Friday", nufiJour: "Nzîngū" , month: "Njwēnɑ̌hntà"},
   { numero: 6, nom: "Sipūānkhù", jour: "Saturday", nufiJour: "Nzîsō" , month: "Njwēnɑ̌hntà"},
   { numero: 7, nom: "Cīēncə̄ə̄", jour: "Sunday", nufiJour: "Nsū'kwɑ̀" , month: "Njwēnɑ̌hntà"},

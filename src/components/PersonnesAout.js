@@ -23,7 +23,7 @@ const PersonnesAout = [
   { numero: 22, nom: "Pèè nèhē", jour: "Tuesday", nufiJour: "NKɑ́ɑ́tēē" , month: "Mɑ̄ngà'nshì"},
   { numero: 23, nom: "Pèèsìnjō", jour: "Wednesday", nufiJour: "Nzêngòò" , month: "Mɑ̄ngà'nshì"},
   { numero: 24, nom: "Pǒ'kām", jour: "Thursday", nufiJour: "Ncômntēē", month: "Mɑ̄ngà'nshì" },
-  { numero: 25, nom: "Pǒ'sīē", jour: "Friday", nufiJour: "Nzîngū" , month: "Mɑ̄ngà'nshì"},
+  { numero: 25, nom: "Khʉ̄ɑ̄njə̀'", jour: "Friday", nufiJour: "Nzîngū" , month: "Mɑ̄ngà'nshì"},
   { numero: 26, nom: "Sênfə̀", jour: "Saturday", nufiJour: "Nzîsō" , month: "Mɑ̄ngà'nshì"},
   { numero: 27, nom: "Sênfʉ̀", jour: "Sunday", nufiJour: "Nsū'kwɑ̀" , month: "Mɑ̄ngà'nshì"},
   { numero: 38, nom: "Sìàntóó", jour: "Monday", nufiJour: "Nthʉ̄'ntāā" , month: "Mɑ̄ngà'nshì"},

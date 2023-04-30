@@ -12,7 +12,7 @@ const PersonnesJuin = [
   { numero: 11, nom: "Fǎkūālā", jour: "Sunday", nufiJour: "NKɑ́ɑ́tēē" , month: "Mòmòshʉ̄"},
   { numero: 12, nom: "Ndʉɑ̀pèè", jour: "Monday", nufiJour: "Nzêngòò" , month: "Mòmòshʉ̄"},
   { numero: 13, nom: "Njə́ə̀kwɑ̀", jour: "Tuesday", nufiJour: "Ncômntēē" , month: "Mòmòshʉ̄"},
-  { numero: 14, nom: "Njə̀ə̄mōō", jour: "Wednesday", nufiJour: "Nzîngū" , month: "Mòmòshʉ̄"},
+  { numero: 14, nom: "Nzə̌ntēm", jour: "Wednesday", nufiJour: "Nzîngū" , month: "Mòmòshʉ̄"},
   { numero: 15, nom: "Ndə̀ə̄nkām", jour: "Thursday", nufiJour: "Nzîsō" , month: "Mòmòshʉ̄"},
   { numero: 16, nom: "Njòōmbísīē", jour: "Friday", nufiJour: "Nsū'kwɑ̀" , month: "Mòmòshʉ̄"},
   { numero: 17, nom: "Fǎ'nkām", jour: "Saturday", nufiJour: "Nthʉ̄'ntāā" , month: "Mòmòshʉ̄"},
