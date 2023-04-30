@@ -7,7 +7,7 @@ const PersonnesAout = [
   { numero: 6, nom: "Ngǔ'nù", jour: "Sunday", nufiJour: "NKɑ́ɑ́tēē", month: "Mɑ̄ngà'nshì" },
   { numero: 7, nom: "Ngʉ̄ɑ̄'lɑ̀'míé", jour: "Monday", nufiJour: "Nzêngòò", month: "Mɑ̄ngà'nshì" },
   { numero: 8, nom: "Nì", jour: "Tuesday", nufiJour: "Ncômntēē" , month: "Mɑ̄ngà'nshì"},
-  { numero: 9, nom: "Njūmɑ̄nì", jour: "Wednesday", nufiJour: "Nzîngū" , month: "Mɑ̄ngà'nshì"},
+  { numero: 9, nom: "Nkɑ̀'ncò", jour: "Wednesday", nufiJour: "Nzîngū" , month: "Mɑ̄ngà'nshì"},
   { numero: 10, nom: "Ngǎ'mɑ̄nì", jour: "Thursday", nufiJour: "Nzîsō", month: "Mɑ̄ngà'nshì" },
   { numero: 11, nom: "Njə̀ə̄kām", jour: "Friday", nufiJour: "Nsū'kwɑ̀" , month: "Mɑ̄ngà'nshì"},
   { numero: 12, nom: "Njīìnù", jour: "Saturday", nufiJour: "Nthʉ̄'ntāā" , month: "Mɑ̄ngà'nshì"},
