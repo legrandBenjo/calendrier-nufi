@@ -22,14 +22,14 @@ const PersonnesOctobre = [
   { numero: 21, nom: "Mɑ̂nkèè", jour: "Saturday", nufiJour: "Nzîsō" , month: "Ndʉ̌'nzɑ̄"},
   { numero: 22, nom: "Ngòò Lə́ə́ncə̄ə̄", jour: "Sunday", nufiJour: "Nsū'kwɑ̀" , month: "Ndʉ̌'nzɑ̄"},
   { numero: 23, nom: "Nzāànzhʉ̀ɑ̀'", jour: "Monday", nufiJour: "Nthʉ̄'ntāā" , month: "Ndʉ̌'nzɑ̄"},
-  { numero: 24, nom: "Mbè'nzhì", jour: "Tuesday", nufiJour: "Líé'nkwè’" , month: "Ndʉ̌'nzɑ̄"},
+  { numero: 24, nom: "Cāgwúé", jour: "Tuesday", nufiJour: "Líé'nkwè’" , month: "Ndʉ̌'nzɑ̄"},
   { numero: 25, nom: "Táàlə̀ə̀", jour: "Wednesday", nufiJour: "NKɑ́ɑ́tēē" , month: "Ndʉ̌'nzɑ̄"},
   { numero: 26, nom: "Ngòòālə̀ə̀", jour: "Thursday", nufiJour: "Nzêngòò" , month: "Ndʉ̌'nzɑ̄"},
   { numero: 27, nom: "Nzɑ̂ngwàà", jour: "Friday", nufiJour: "Ncômntēē" , month: "Ndʉ̌'nzɑ̄"},
   { numero: 28, nom: "Mɑ̄ngwɑ̂'", jour: "Saturday", nufiJour: "Nzîngū" , month: "Ndʉ̌'nzɑ̄"},
   { numero: 29, nom: "Nshʉ̀ɑ̀ncò", jour: "Sunday", nufiJour: "Nzîsō" , month: "Ndʉ̌'nzɑ̄"},
-  { numero: 30, nom: "Mmɑ̀'ncò", jour: "Monday", nufiJour: "Nsū'kwɑ̀" , month: "Ndʉ̌'nzɑ̄"},
-  { numero: 31, nom: "Táàmɑ̀'ncò", jour: "Tuesday", nufiJour: "Nthʉ̄'ntāā" , month: "Ndʉ̌'nzɑ̄"},
+  { numero: 30, nom: "Cūātīə̄", jour: "Monday", nufiJour: "Nsū'kwɑ̀" , month: "Ndʉ̌'nzɑ̄"},
+  { numero: 31, nom: "Shə̄mānī", jour: "Tuesday", nufiJour: "Nthʉ̄'ntāā" , month: "Ndʉ̌'nzɑ̄"},
 ];
 
 export default PersonnesOctobre;

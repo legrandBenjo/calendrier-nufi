@@ -8,7 +8,7 @@ const PersonnesDecembre = [
   { numero: 7, nom: "Kāmgà", jour: "Thursday", nufiJour: "Nzîngū"  , month: "Ncátmɑ̄ŋū"},
   { numero: 8, nom: "Cālə̄", jour: "Friday", nufiJour: "Nzîsō"  , month: "Ncátmɑ̄ŋū"},
   { numero: 9, nom: "Tūāsī", jour: "Saturday" , nufiJour: "Nsū'kwɑ̀", month: "Ncátmɑ̄ŋū"},
-  { numero: 10, nom: "Tūāpì", jour: "Sunday" , nufiJour: "Nthʉ̄'ntāā", month: "Ncátmɑ̄ŋū"},
+  { numero: 10, nom: "Ngə̌nkām", jour: "Sunday" , nufiJour: "Nthʉ̄'ntāā", month: "Ncátmɑ̄ŋū"},
   { numero: 11, nom: "Hɑ̄ālʉ̄ɑ̄'", jour: "Monday", nufiJour: "Líé'nkwè’"  , month: "Ncátmɑ̄ŋū"},
   { numero: 12, nom: "Ndə̄nkāp", jour: "Tuesday", nufiJour: "NKɑ́ɑ́tēē" , month: "Ncátmɑ̄ŋū"},
   { numero: 13, nom: "Ndʉ̀mbʉ́ɑ́", jour: "Wednesday", nufiJour: "Nzêngòò"   , month: "Ncátmɑ̄ŋū"},

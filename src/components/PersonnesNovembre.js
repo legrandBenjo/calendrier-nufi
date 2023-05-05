@@ -5,7 +5,7 @@ const PersonnesNovembre = [
   { numero: 4, nom: "Cōkʉ̀", jour: "Saturday", nufiJour: "Ncômntēē" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},
   { numero: 5, nom: "Mòōmɑ̄nì", jour: "Sunday", nufiJour: "Nzîngū" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},
   { numero: 6, nom: "Mòówɑ̄", jour: "Monday", nufiJour: "Nzîsō" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},
-  { numero: 7, nom: "Khʉ̄ɑ̄njə̀'", jour: "Tuesday", nufiJour: "Nsū'kwɑ̀" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},
+  { numero: 7, nom: "Kǎpnì", jour: "Tuesday", nufiJour: "Nsū'kwɑ̀" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},
   { numero: 8, nom: "Mfá'sʉ̄'", jour: "Wednesday", nufiJour: "Nthʉ̄'ntāā" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},
   { numero: 9, nom: "Tʉ̄sə̄", jour: "Thursday", nufiJour: "Líé'nkwè’" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},
   { numero: 10, nom: "Ncà'", jour: "Friday", nufiJour: "NKɑ́ɑ́tēē" , month: "Nkhʉ̀ɑ̀nʉ̀ɑ̀"},

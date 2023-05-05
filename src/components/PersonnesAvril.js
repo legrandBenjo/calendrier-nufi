@@ -17,7 +17,7 @@ const PersonnesAvril = [
   { numero: 16, nom: "Pénthʉ̄", jour: "Sunday", nufiJour: "NKɑ́ɑ́tēē" , month: "Sò'njɑ̀ɑ̀"},
   { numero: 17, nom: "Jə̄ngūē", jour: "Monday", nufiJour: "Nzêngòò" , month: "Sò'njɑ̀ɑ̀"},
   { numero: 18, nom: "Wěnzhī", jour: "Tuesday", nufiJour: "Ncômntēē" , month: "Sò'njɑ̀ɑ̀"},
-  { numero: 19, nom: "Ngə̌nkām", jour: "Wednesday", nufiJour: "Nzîngū" , month: "Sò'njɑ̀ɑ̀"},
+  { numero: 19, nom: "Tūāpì", jour: "Wednesday", nufiJour: "Nzîngū" , month: "Sò'njɑ̀ɑ̀"},
   { numero: 20, nom: "Pànjīī", jour: "Thursday", nufiJour: "Nzîsō" , month: "Sò'njɑ̀ɑ̀"},
   { numero: 21, nom: "Wěnsìcə̄ə̄", jour: "Friday", nufiJour: "Nsū'kwɑ̀" , month: "Sò'njɑ̀ɑ̀"},
   { numero: 22, nom: "Càlə̄", jour: "Saturday", nufiJour: "Nthʉ̄'ntāā" , month: "Sò'njɑ̀ɑ̀"},
