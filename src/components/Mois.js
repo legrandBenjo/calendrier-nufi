@@ -11,7 +11,7 @@ import PersonnesOctobre from "./PersonnesOctobre";
 import PersonnesNovembre from "./PersonnesNovembre";
 import PersonnesDecembre from "./PersonnesDecembre";
 
-/* Pour le moment je crée le composant Mois.js mois en statique
+/* Pour le moment je crée le composant Mois.js en statique
 * Ce composant pourra être amélioré
 */
 export const mois = [

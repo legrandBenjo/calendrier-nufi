@@ -127,6 +127,7 @@ class CalendrierPersonnes extends Component {
             <div className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib mid-green" onClick={this.moisPrecedent} >Mɑ̄ŋū Pēēsì</div>
             <div className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-blue" onClick={this.moisSuivant}>Mɑ̄ŋū Ntāmbhì</div>
           </div>
+          <div className="pa3">© Développé pour Resulam par Keudjo, Mougoue et Ange KEUNA, sous la demande et l'idée original de Shck Ca᷅mnà'</div>
         </div>
       </div>
     );
