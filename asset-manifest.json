@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/calendrier-nufi/static/css/main.edf081af.css",
-    "main.js": "/calendrier-nufi/static/js/main.3fb6f4a7.js",
+    "main.css": "/calendrier-nufi/static/css/main.f11b87dd.css",
+    "main.js": "/calendrier-nufi/static/js/main.3a227dc4.js",
     "static/js/787.44a9735d.chunk.js": "/calendrier-nufi/static/js/787.44a9735d.chunk.js",
     "index.html": "/calendrier-nufi/index.html",
-    "main.edf081af.css.map": "/calendrier-nufi/static/css/main.edf081af.css.map",
-    "main.3fb6f4a7.js.map": "/calendrier-nufi/static/js/main.3fb6f4a7.js.map",
+    "main.f11b87dd.css.map": "/calendrier-nufi/static/css/main.f11b87dd.css.map",
+    "main.3a227dc4.js.map": "/calendrier-nufi/static/js/main.3a227dc4.js.map",
     "787.44a9735d.chunk.js.map": "/calendrier-nufi/static/js/787.44a9735d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.edf081af.css",
-    "static/js/main.3fb6f4a7.js"
+    "static/css/main.f11b87dd.css",
+    "static/js/main.3a227dc4.js"
   ]
 }
