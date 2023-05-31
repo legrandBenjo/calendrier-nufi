@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { mois } from './components/Mois'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import RecherchePersonnes from './components/RecherchePersonnes'
 import './CalendrierPersonnes.css';
 
@@ -94,40 +97,41 @@ class CalendrierPersonnes extends Component {
     const { jourActuel, personnesFiltrees, recherche } = this.state;
     const currentMonth = this.state.moisActuel;
     return (
-      <div>
-        <div className="bg-light-grey dib br3 pa3 ma3 bw2 showdow-5">
-          <h2>{mois[currentMonth].nom}</h2>
+      <div className="container">
+        <div className="bg-light-grey dib br3 pa3 ma3 bw2 shadow-5">
+          <h2 className="text-center">{mois[currentMonth].nom}</h2>
           <RecherchePersonnes
             recherche={recherche}
             handleRechercheChange={this.handleRechercheChange}
           />
-          <table>
-            <tbody>
-              {[0, 1, 2, 3].map((i) => (
-                <tr key={i}>
-                  {personnesFiltrees.slice(i * 8, (i + 1) * 8).map((personne, j) => (
-                    <td key={j}
-                      className={personne.numero === jourActuel ? "aujourdhui" : ""}>
-                      <div className="enteTableau">{personne.nufiJour}<br />
-                        <div className="black">{personne.month}</div>
-                      </div>
-                      <br />
-                      <div className="f4 dark-red">{personne.jour}</div>
-                      <br />
-                      <div className="">{personne.numero}</div>
-                      <br />
-                      <div className="b">{personne.nom}</div>
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="ph3 mt4">
-            <div className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib mid-green" onClick={this.moisPrecedent} >Mɑ̄ŋū Pēēsì</div>
-            <div className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-blue" onClick={this.moisSuivant}>Mɑ̄ŋū Ntāmbhì</div>
+          <div className="row">
+            {personnesFiltrees.map((personne, index) => (
+              <div key={index} className="col-sm-6 col-md-3">
+                <div
+                  className={`personne ${personne.numero === jourActuel ? "aujourdhui" : ""}`}
+                >
+                  <div className="enteTableau">{personne.nufiJour}</div>
+                  <div className="black">{personne.month}</div>
+                  <div className="f4 dark-red">{personne.jour}</div>
+                  <div>{personne.numero}</div>
+                  <div className="b">{personne.nom}</div>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="pa3">© Développé pour Resulam par Keudjo, Mougoue et Ange KEUNA, sous la demande et l'idée original de Shck Ca᷅mnà'</div>
+          <div className="d-flex justify-content-between mt-4">
+            <div
+              className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib mid-green"
+              onClick={this.moisPrecedent}>
+              Mɑ̄ŋū Pēēsì
+            </div>
+            <div
+              className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-blue"
+              onClick={this.moisSuivant}>
+              Mɑ̄ŋū Ntāmbhì
+            </div>
+          </div>
+          <div className="pa3 text-center">© Resulam 2023</div>
         </div>
       </div>
     );

@@ -1,70 +1,17 @@
-table {
-  border-collapse: collapse;
-  margin: 2% auto;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  max-width: 100%;
-  width: 100%;
-}
+/* CalendrierPersonnes.css */
 
-thead th {
-  background-color: #0074d9;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-tbody td {
+.personne {
   border: 1px solid #ddd;
-  text-align: center;
-  padding: 1rem;
-}
-
-tbody td:hover {
-  background-color: #f5f5f5;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .enteTableau {
-  background-color: #357edd;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-.even {
-  background-color: #f8f8f8;
-}
-
-.odd {
-  background-color: #e8e8e8;
-}
-
-.enteTableau {
-  padding: 0.5rem;
-}
-
-/* Style pour aujourdhui*/
-.aujourdhui {
-  background-color: #FFD700;
-}
-
-.f4.dark-red.aujourdhui {
-  color: #FFD700;
   font-weight: bold;
+  font-size: 18px;
 }
 
-.b.aujourdhui {
-  color: #d10a3c;
-}
-
-/* Style pour la recherche*/
-.search-bar {
-  background-color: #fff;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  padding: 0.5rem;
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 1rem;
+.aujourdhui {
+  background-color: #ffc107;
+  color: #fff;
 }
