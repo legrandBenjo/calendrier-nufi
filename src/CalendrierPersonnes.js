@@ -141,12 +141,12 @@ class CalendrierPersonnes extends Component {
             <div
               className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib mid-green"
               onClick={this.moisPrecedent}>
-              Mɑ̄ŋū Pēēsì
+              Mɑ̄ŋū njàm
             </div>
             <div
               className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-blue"
               onClick={this.moisSuivant}>
-              Mɑ̄ŋū Ntāmbhì
+              Mɑ̄ŋū mbhì
             </div>
           </div>
           <div className="pa3 text-center">© Resulam 2023</div>
