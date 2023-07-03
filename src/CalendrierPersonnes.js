@@ -69,11 +69,12 @@ class CalendrierPersonnes extends Component {
   /** Utilisé uniquement pour filtrer les résultats de la rechercehe */
   handleRechercheChange = (event) => {
     var personnesMois = mois.map(m => m.personnes).flat();
-    const recherche = this.normalizeWord(event.target.value.toLowerCase().trim());
+    const recherche = event.target.value.toLowerCase().trim();
     if (recherche === '') {
       personnesMois = mois[this.state.moisActuel].personnes;
     }
-    var personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
+    var personnesFiltrees = this.filtrePersonnes(personnesMois, this.normalizeWord(recherche));
+    console.log(personnesFiltrees);
     this.setState({ recherche, personnesFiltrees });
   };
 
