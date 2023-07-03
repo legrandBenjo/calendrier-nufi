@@ -129,7 +129,7 @@ class CalendrierPersonnes extends Component {
                   className={`personne ${personne.numero === jourActuel ? "aujourdhui" : ""}`}
                 >
                   <div className="enteTableau">{personne.nufiJour}</div>
-                  <div className="black">{personne.month}</div>
+                  <div className="nufiMonth">{personne.month}</div>
                   <div className="f4 dark-red">{personne.jour}</div>
                   <div>{personne.numero}</div>
                   <div className="b">{personne.nom}</div>
