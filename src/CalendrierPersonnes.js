@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { mois } from './components/Mois'
+import { getSpecialCharacters } from './components/Utils';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -33,6 +34,23 @@ class CalendrierPersonnes extends Component {
     }));
   };
 
+  normalizeWord = (word) => {
+    // Utiliser la fonction getSpecialCharacters pour interpréter les mots du clavier
+    // en langue FE'EFE et normaliser le mot pour la recherche
+    // Exemple:
+    if (!word) {
+      return '';
+    }
+    const specialCharacters = getSpecialCharacters(word);
+    let normalizedWord = word;
+
+    specialCharacters.forEach((replacement) => {
+      normalizedWord = normalizedWord.replace(replacement.original, replacement.replacement);
+    });
+
+    return normalizedWord.toLowerCase();
+  };
+
   filtrePersonnes(personnesMois, recherche) {
     return personnesMois.filter((personne) => {
       const nomPersonne = personne.nom.toLowerCase();
@@ -51,7 +69,7 @@ class CalendrierPersonnes extends Component {
   /** Utilisé uniquement pour filtrer les résultats de la rechercehe */
   handleRechercheChange = (event) => {
     var personnesMois = mois.map(m => m.personnes).flat();
-    const recherche = event.target.value.toLowerCase().trim();
+    const recherche = this.normalizeWord(event.target.value.toLowerCase().trim());
     if (recherche === '') {
       personnesMois = mois[this.state.moisActuel].personnes;
     }
