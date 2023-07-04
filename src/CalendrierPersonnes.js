@@ -54,7 +54,7 @@ class CalendrierPersonnes extends Component {
   filtrePersonnes(personnesMois, recherche) {
     return personnesMois.filter((personne) => {
       const nomPersonne = personne.nom.toLowerCase();
-      const jourPersonne = personne.jour.toString();
+      const jourPersonne = personne.jour.toLowerCase();
       const nufiJourPersonne = personne.nufiJour.toLowerCase();
       const numeroPersonne = personne.numero.toString();
       return (
