@@ -1,40 +1,33 @@
-import React, { Component } from "react";
-import { mois } from './components/Mois'
+//CalendrierPersonnes .js
+import React, { useState, useEffect } from 'react';
+import { mois } from './components/Mois';
 import { getSpecialCharacters } from './components/Utils';
+import MarcheDuJour from './components/MarcheDuJour';
+import { useNavigate } from 'react-router-dom';
+import RecherchePersonnes from './components/RecherchePersonnes';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import RecherchePersonnes from './components/RecherchePersonnes'
+
+
 import './CalendrierPersonnes.css';
 
-class CalendrierPersonnes extends Component {
-  constructor(props) {
-    super(props);
-    const moisEnCours = new Date().getMonth();
-    const dateActuelle = new Date();
-    this.state = {
-      moisActuel: moisEnCours, // ce state permet de se positionner sur le mois actuel 
-      jourActuel: dateActuelle.getDate(), // celui-ci permet de savoir le jour (exemple: 14)
-      recherche: '', // celui-ci est utilisé pour la recherche
-      personnesFiltrees: mois[moisEnCours].personnes, // Ajouter le state pour les personnes filtrées
-    };
-  }
+const CalendrierPersonnes = () => {
+  const [moisActuel, setMoisActuel] = useState(new Date().getMonth());
+  const [jourActuel] = useState(new Date().getDate());
+  const [recherche, setRecherche] = useState('');
+  const [personnesFiltrees, setPersonnesFiltrees] = useState(mois[moisActuel].personnes);
+  const navigate = useNavigate();
 
-  //moisPrecedent va utiliser le state moisActuel pour afficher le mois précédent dans le bouton " mois précédent"
-  moisPrecedent = () => {
-    this.setState((prevState) => ({
-      moisActuel: (prevState.moisActuel - 1 + mois.length) % mois.length,
-    }));
+  const moisPrecedent = () => {
+    setMoisActuel((prevState) => (prevState - 1 + mois.length) % mois.length);
   };
 
-  //moisSuivant va utiliser le state moisActuel pour afficher le mois précédent dans le bouton "mois Suivant"
-  moisSuivant = () => {
-    this.setState((prevState) => ({
-      moisActuel: (prevState.moisActuel + 1) % mois.length,
-    }));
+  const moisSuivant = () => {
+    setMoisActuel((prevState) => (prevState + 1) % mois.length);
   };
 
-  normalizeWord = (word) => {
+  const normalizeWord = (word) => {
     // Utiliser la fonction getSpecialCharacters pour interpréter les mots du clavier
     // en langue FE'EFE et normaliser le mot pour la recherche
     // Exemple:
@@ -51,7 +44,7 @@ class CalendrierPersonnes extends Component {
     return normalizedWord.toLowerCase();
   };
 
-  filtrePersonnes(personnesMois, recherche) {
+  const filtrePersonnes = (personnesMois, recherche) => {
     return personnesMois.filter((personne) => {
       const nomPersonne = personne.nom.toLowerCase();
       const jourPersonne = personne.jour.toLowerCase();
@@ -64,97 +57,103 @@ class CalendrierPersonnes extends Component {
         numeroPersonne.includes(recherche)
       );
     });
-  }
+  };
 
   /** Utilisé uniquement pour filtrer les résultats de la rechercehe */
-  handleRechercheChange = (event) => {
-    var personnesMois = mois.map(m => m.personnes).flat();
+  //On recherche toutes les occurences du mot dans toute l'année.
+  const handleRechercheChange = (event) => {
     const recherche = event.target.value.toLowerCase().trim();
+    let personnesMois = mois.map((m) => m.personnes).flat();
     if (recherche === '') {
-      personnesMois = mois[this.state.moisActuel].personnes;
+      personnesMois = mois[moisActuel].personnes;
     }
-    var personnesFiltrees = this.filtrePersonnes(personnesMois, this.normalizeWord(recherche));
-    console.log(personnesFiltrees);
-    this.setState({ recherche, personnesFiltrees });
+    const personnesFiltrees = filtrePersonnes(personnesMois, normalizeWord(recherche));
+    setRecherche(recherche);
+    setPersonnesFiltrees(personnesFiltrees);
   };
 
 
-  componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyDown);
-  }
+  /*
+  * Utilisé pour naviguer et afficher le marché du jour losque l'on clique dans une case du calendrier
+  */
+  const handleClick = (personne) => {
+    const marcheDuJour = MarcheDuJour.find((marche) => marche.nufiJour === personne.nufiJour);
+    if (marcheDuJour) {
+      navigate(`/info-marche-jour?nufiJour=${marcheDuJour.nufiJour}&marche=${marcheDuJour.marche}`);
+    } else {
+      console.log('Aucune information sur le marché pour ce jour');
+    }
+  };
 
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyDown);
-  }
-
-  /** Ici on exécute l'évènement des touches du clavier pour passer de suivant à précédent */
-  handleKeyDown = (event) => {
+  /** Ici on récupère les codes du clavier  pour appeler les métodes moisPrecedent et moisSuivant */
+  const handleKeyDown = (event) => {
     switch (event.keyCode) {
-      case 37: // touche de gauche
-        this.moisPrecedent();
+      case 37:
+        moisPrecedent();
         break;
-      case 39: // touche de droite
-        this.moisSuivant();
+      case 39:
+        moisSuivant();
         break;
       default:
         break;
     }
   };
 
-
   /** Utilisé lorsque j'appuie sur les touches Précédent/Suivant */
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.moisActuel !== this.state.moisActuel) {
-      const personnesMois = mois[this.state.moisActuel].personnes;
-      const recherche = this.state.recherche.toLowerCase().trim();
-      const personnesFiltrees = this.filtrePersonnes(personnesMois, recherche);
-      this.setState({ recherche, personnesFiltrees });
-    }
-  }
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
-  render() {
-    const { jourActuel, personnesFiltrees, recherche } = this.state;
-    const currentMonth = this.state.moisActuel;
-    return (
-      <div className="container">
-        <div className="bg-light-grey dib br3 pa3 ma3 bw2 shadow-5">
-          <h2 className="text-center">{mois[currentMonth].nom}</h2>
-          <RecherchePersonnes
-            recherche={recherche}
-            handleRechercheChange={this.handleRechercheChange}
-          />
-          <div className="row">
-            {personnesFiltrees.map((personne, index) => (
-              <div key={index} className="col-sm-6 col-md-3">
-                <div
-                  className={`personne ${personne.numero === jourActuel ? "aujourdhui" : ""}`}
-                >
-                  <div className="enteTableau">{personne.nufiJour}</div>
-                  <div className="nufiMonth">{personne.month}</div>
-                  <div className="f4 dark-red">{personne.jour}</div>
-                  <div>{personne.numero}</div>
-                  <div className="b">{personne.nom}</div>
-                </div>
+  useEffect(() => {
+    if (moisActuel !== new Date().getMonth() ){
+      const personnesMois = mois[moisActuel].personnes;
+      const personnesFiltrees = filtrePersonnes(personnesMois, normalizeWord(recherche));
+      console.log(personnesFiltrees);
+      console.log('personnesMois: ',personnesMois);
+      setPersonnesFiltrees(personnesFiltrees);
+    }
+    
+  }, [moisActuel, recherche]);
+
+  return (
+    <div className="container">
+      <div className="bg-light-grey dib br3 pa3 ma3 bw2 shadow-5">
+        <h2 className="text-center">{mois[moisActuel].nom}</h2>
+        <RecherchePersonnes
+          recherche={recherche}
+          handleRechercheChange={handleRechercheChange}
+        />
+        <div className="row">
+          {personnesFiltrees.map((personne, index) => (
+            <div key={index} className="col-sm-6 col-md-3">
+              <div
+                className={`personne ${personne.numero === jourActuel ? 'aujourdhui' : ''}`}
+                onClick={() => handleClick(personne)}>
+                <div className="enteTableau">{personne.nufiJour}</div>
+                <div className="nufiMonth">{personne.month}</div>
+                <div className="f4 dark-red">{personne.jour}</div>
+                <div>{personne.numero}</div>
+                <div className="b">{personne.nom}</div>
               </div>
-            ))}
-          </div>
-          <div className="d-flex justify-content-between mt-4">
-            <div
-              className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib mid-green"
-              onClick={this.moisPrecedent}>
-              Mɑ̄ŋū njàm
             </div>
-            <div
-              className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-blue"
-              onClick={this.moisSuivant}>
-              Mɑ̄ŋū mbhì
-            </div>
-          </div>
-          <div className="pa3 text-center">© Resulam 2023</div>
+          ))}
         </div>
+        <div className="d-flex justify-content-between mt-4">
+          <div className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib mid-green" onClick={moisPrecedent}>
+            Mɑ̄ŋū njàm
+          </div>
+          <div className="f6 link dim br-pill ba bw2 ph3 pv2 mb2 dib dark-blue" onClick={moisSuivant}>
+            Mɑ̄ŋū mbhì
+          </div>
+        </div>
+        <div className="pa3 text-center">© Resulam 2023</div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default CalendrierPersonnes;
+

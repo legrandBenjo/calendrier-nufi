@@ -11,7 +11,7 @@ import PersonnesOctobre from "./PersonnesOctobre";
 import PersonnesNovembre from "./PersonnesNovembre";
 import PersonnesDecembre from "./PersonnesDecembre";
 
-/* Pour le moment je crée le composant Mois.js en statique
+/* Pour chaque mois de l'année, j'ajoute des personnes définies
 * Ce composant pourra être amélioré
 */
 export const mois = [
