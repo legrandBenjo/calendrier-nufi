@@ -14,7 +14,7 @@ const InfoMarcheJour = () => {
       {nufiJour && marche ? (
         <div>
           Aujourd'hui / Líé' ntēē: <p className="jourNufi">{nufiJour}</p>
-          Villes de marché / Zʉ̀' ntēē:<p className="marche">{marche}</p>
+          Villes de marché / Zʉ̌' ntēē:<p className="marche">{marche}</p>
         </div>
       ) : (
         <p className="info-message">Aucune information sur le marché pour ce jour</p>
